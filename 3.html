@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse des Diagrammes - CM1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            background: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+            padding: 10px;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 1.6em;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding: 18px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            color: #2980b9;
+            margin: 12px 0 8px 0;
+            font-size: 1.15em;
+        }
+        
+        .example-box {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 12px 0;
+            border: 2px dashed #3498db;
+        }
+        
+        .exercise {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .show-answer-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin: 8px 0;
+            transition: background 0.3s;
+        }
+        
+        .show-answer-btn:hover {
+            background: #2980b9;
+        }
+        
+        .answer {
+            display: none;
+            background: #e8f4fc;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 3px solid #3498db;
+        }
+        
+        .emoji {
+            font-size: 1.1em;
+            margin-right: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="emoji">📊</span> Lecture des Diagrammes à Barres</h1>
+            <div class="subtitle">Niveau CM1 - Organisation et traitement des données</div>
+        </header>
+        
+        <div class="content">
+            <section class="section" id="analyse">
+                <h2><span class="emoji">🔎</span> Analyser le diagramme</h2>
+                
+                <div class="example-box">
+                    <h3><span class="emoji">💡</span> Questions à se poser</h3>
+                    <p>Quand tu regardes un diagramme à barres, pose-toi ces questions :</p>
+                    <ul>
+                        <li>Quelle est la barre la plus haute ?</li>
+                        <li>Quelle est la barre la plus basse ?</li>
+                        <li>Quelles barres ont à peu près la même hauteur ?</li>
+                        <li>Quelle est la différence entre deux barres ?</li>
+                        <li>Que peux-tu conclure de ce diagramme ?</li>
+                    </ul>
+                </div>
+                
+                <div class="exercise">
+                    <h3><span class="emoji">💪</span> À toi d'analyser !</h3>
+                    <p>Regarde le diagramme des fruits préférés et réponds aux questions :</p>
+                    
+                    <p><strong>1. Quel fruit est le plus populaire ? Combien d'élèves l'ont choisi ?</strong></p>
+                    <button class="show-answer-btn" onclick="toggleAnswer('answer1')">Voir la réponse</button>
+                    <div id="answer1" class="answer">
+                        <p><span class="emoji">✅</span> Le fruit le plus populaire est la <strong>banane</strong> avec <strong>12 élèves</strong>.</p>
+                    </div>
+                    
+                    <p><strong>2. Quel fruit est le moins populaire ? Combien d'élèves l'ont choisi ?</strong></p>
+                    <button class="show-answer-btn" onclick="toggleAnswer('answer2')">Voir la réponse</button>
+                    <div id="answer2" class="answer">
+                        <p><span class="emoji">✅</span> Le fruit le moins populaire est le <strong>kiwi</strong> avec <strong>4 élèves</strong>.</p>
+                    </div>
+                    
+                    <p><strong>3. Combien d'élèves préfèrent les pommes ?</strong></p>
+                    <button class="show-answer-btn" onclick="toggleAnswer('answer3')">Voir la réponse</button>
+                    <div id="answer3" class="answer">
+                        <p><span class="emoji">✅</span> <strong>8 élèves</strong> préfèrent les pommes.</p>
+                    </div>
+                    
+                    <p><strong>4. Combien d'élèves préfèrent les raisins par rapport aux oranges ?</strong></p>
+                    <button class="show-answer-btn" onclick="toggleAnswer('answer4')">Voir la réponse</button>
+                    <div id="answer4" class="answer">
+                        <p><span class="emoji">✅</span> Il y a <strong>4 élèves de plus</strong> qui préfèrent les raisins (10 élèves) que les oranges (6 élèves).</p>
+                    </div>
+                    
+                    <p><strong>5. Combien d'élèves ont participé à ce sondage ?</strong></p>
+                    <button class="show-answer-btn" onclick="toggleAnswer('answer5')">Voir la réponse</button>
+                    <div id="answer5" class="answer">
+                        <p><span class="emoji">✅</span> 8 + 12 + 6 + 10 + 4 = <strong>40 élèves</strong> ont participé.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p><span class="emoji">📊</span> Organisation et traitement des données - Niveau CM1 <span class="emoji">📊</span></p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
