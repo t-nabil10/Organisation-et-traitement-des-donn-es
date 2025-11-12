@@ -17,103 +17,146 @@
             background: #f5f5f5;
             color: #333;
             min-height: 100vh;
-            padding: 10px;
-            font-size: 14px;
+            padding: 8px;
+            font-size: 13px;
         }
         
         .container {
             max-width: 1000px;
             margin: 0 auto;
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             overflow: hidden;
         }
         
         header {
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
-            padding: 15px;
+            padding: 12px;
             text-align: center;
         }
         
         h1 {
-            font-size: 1.6em;
-            margin-bottom: 5px;
+            font-size: 1.4em;
+            margin-bottom: 4px;
         }
         
         .subtitle {
-            font-size: 1.1em;
+            font-size: 1em;
             opacity: 0.9;
         }
         
         .content {
-            padding: 20px;
+            padding: 15px;
         }
         
         .section {
-            margin-bottom: 25px;
-            padding: 18px;
-            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 6px;
             background: #f8f9fa;
             border-left: 4px solid #3498db;
         }
         
         h2 {
             color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-size: 1.2em;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 8px;
+            padding-bottom: 6px;
         }
         
         h3 {
             color: #2980b9;
-            margin: 12px 0 8px 0;
-            font-size: 1.15em;
+            margin: 10px 0 6px 0;
+            font-size: 1.1em;
         }
         
         .definition-box {
             background: #e8f4fc;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 12px 0;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 10px 0;
             border-left: 3px solid #3498db;
+            font-size: 0.95em;
         }
         
         .example-box {
             background: #fff;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 12px 0;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 10px 0;
             border: 2px dashed #3498db;
+            font-size: 0.95em;
+        }
+        
+        .teacher-message {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        
+        .teacher-message a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .teacher-message a:hover {
+            text-decoration: underline;
         }
         
         .emoji {
-            font-size: 1.1em;
-            margin-right: 5px;
+            font-size: 1em;
+            margin-right: 4px;
         }
         
         footer {
             text-align: center;
-            padding: 15px;
+            padding: 12px;
             background: #2c3e50;
             color: white;
-            margin-top: 20px;
-            font-size: 0.9em;
+            margin-top: 15px;
+            font-size: 0.85em;
         }
         
         ul, ol {
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-        
-        li {
+            margin-left: 18px;
             margin-bottom: 8px;
         }
         
+        li {
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        
         p {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                font-size: 12px;
+                padding: 5px;
+            }
+            
+            h1 {
+                font-size: 1.3em;
+            }
+            
+            h2 {
+                font-size: 1.1em;
+            }
+            
+            h3 {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -145,6 +188,12 @@
                     </ul>
                 </div>
             </section>
+
+            <!-- Message pour le maître -->
+            <div class="teacher-message">
+                <p><strong>📝 Message pour le maître :</strong> Si l'affichage ne fonctionne pas correctement, 
+                <a href="https://t-nabil10.github.io/Organisation-et-traitement-des-donn-es/1.html" target="_blank">cliquez ici pour accéder à la version en ligne</a>.</p>
+            </div>
         </div>
         
         <footer>
