@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice Pratique - Diagrammes</title>
+    <title>Résumé - Diagrammes à Barres</title>
     <style>
         * {
             margin: 0;
@@ -73,117 +73,22 @@
             font-size: 1.1em;
         }
         
-        .chart-container {
-            background: white;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 12px 0;
-            border: 2px solid #9b59b6;
-            text-align: center;
-        }
-        
-        .bar-chart {
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            height: 160px;
-            gap: 10px;
-            margin: 15px 0;
-            padding: 8px;
-            background: #f8f9fa;
-            border-radius: 4px;
-        }
-        
-        .bar {
-            width: 35px;
-            background: linear-gradient(to top, #e74c3c, #c0392b);
-            border-radius: 4px 4px 0 0;
-            position: relative;
-            text-align: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .bar-label {
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            right: 0;
-            font-size: 0.8em;
-            color: #333;
-        }
-        
-        .bar-value {
-            position: absolute;
-            top: -20px;
-            left: 0;
-            right: 0;
-            font-size: 0.8em;
-            font-weight: bold;
-        }
-        
-        .y-axis {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-right: 8px;
-        }
-        
-        .y-label {
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 4px;
-            font-size: 0.8em;
-        }
-        
-        .chart-with-axes {
-            display: flex;
-            align-items: center;
-        }
-        
-        .x-axis {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 8px;
-            width: 100%;
-            font-size: 0.8em;
-        }
-        
-        .exercise {
-            background: #f9f9f9;
+        .step-box {
+            background: #e8f6f3;
             padding: 12px;
             border-radius: 5px;
-            margin: 12px 0;
-            border-left: 4px solid #e74c3c;
+            margin: 10px 0;
+            border-left: 3px solid #16a085;
             font-size: 0.95em;
         }
         
-        .show-answer-btn {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85em;
-            margin: 6px 0;
-            transition: background 0.3s;
-        }
-        
-        .show-answer-btn:hover {
-            background: #2980b9;
-        }
-        
-        .answer {
-            display: none;
+        .definition-box {
             background: #e8f4fc;
-            padding: 10px;
-            border-radius: 4px;
-            margin: 8px 0;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 10px 0;
             border-left: 3px solid #3498db;
-            font-size: 0.9em;
+            font-size: 0.95em;
         }
         
         .teacher-message {
@@ -220,6 +125,16 @@
             font-size: 0.85em;
         }
         
+        ul, ol {
+            margin-left: 18px;
+            margin-bottom: 8px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        
         p {
             margin-bottom: 8px;
             font-size: 0.95em;
@@ -229,19 +144,6 @@
             body {
                 font-size: 12px;
                 padding: 5px;
-            }
-            
-            .bar-chart {
-                height: 140px;
-                gap: 8px;
-            }
-            
-            .bar {
-                width: 30px;
-            }
-            
-            .bar-label, .bar-value {
-                font-size: 0.75em;
             }
             
             h1 {
@@ -255,26 +157,6 @@
             h3 {
                 font-size: 1em;
             }
-            
-            .show-answer-btn {
-                padding: 5px 10px;
-                font-size: 0.8em;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .bar-chart {
-                height: 120px;
-                gap: 6px;
-            }
-            
-            .bar {
-                width: 25px;
-            }
-            
-            .bar-label, .bar-value {
-                font-size: 0.7em;
-            }
         }
     </style>
 </head>
@@ -286,90 +168,37 @@
         </header>
         
         <div class="content">
-            <section class="section" id="pratique">
-                <h2><span class="emoji">✏️</span> Exercice pratique</h2>
+            <section class="section" id="conclusion">
+                <h2><span class="emoji">🎓</span> Ce qu'il faut retenir</h2>
                 
-                <div class="chart-container">
-                    <h3><span class="emoji">📊</span> Diagramme : Nombre de livres lus par mois</h3>
-                    
-                    <div class="chart-with-axes">
-                        <div class="y-axis">
-                            <div class="y-label">25</div>
-                            <div class="y-label">20</div>
-                            <div class="y-label">15</div>
-                            <div class="y-label">10</div>
-                            <div class="y-label">5</div>
-                            <div class="y-label">0</div>
-                        </div>
-                        
-                        <div style="flex-grow: 1;">
-                            <div class="bar-chart">
-                                <div class="bar" style="height: 48px;">
-                                    <div class="bar-value">15</div>
-                                    <div class="bar-label">Janv</div>
-                                </div>
-                                <div class="bar" style="height: 64px;">
-                                    <div class="bar-value">20</div>
-                                    <div class="bar-label">Fév</div>
-                                </div>
-                                <div class="bar" style="height: 80px;">
-                                    <div class="bar-value">25</div>
-                                    <div class="bar-label">Mars</div>
-                                </div>
-                                <div class="bar" style="height: 56px;">
-                                    <div class="bar-value">17</div>
-                                    <div class="bar-label">Avr</div>
-                                </div>
-                            </div>
-                            
-                            <div class="x-axis">
-                                <div>Janvier</div>
-                                <div>Février</div>
-                                <div>Mars</div>
-                                <div>Avril</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="text-align: left; margin-top: 15px;">
-                        <p><strong>Axe horizontal :</strong> Les mois de l'année</p>
-                        <p><strong>Axe vertical :</strong> Nombre de livres lus par la classe</p>
-                    </div>
+                <div class="step-box">
+                    <h3><span class="emoji">💡</span> Résumé</h3>
+                    <p>Pour bien lire un diagramme à barres :</p>
+                    <ol>
+                        <li><strong>Regarde le titre</strong> pour comprendre le sujet</li>
+                        <li><strong>Identifie l'axe horizontal</strong> (les catégories)</li>
+                        <li><strong>Identifie l'axe vertical</strong> (les quantités)</li>
+                        <li><strong>Observe les barres</strong> et compare leurs hauteurs</li>
+                        <li><strong>Pose des questions</strong> pour analyser les données</li>
+                    </ol>
                 </div>
                 
-                <div class="exercise">
-                    <h3><span class="emoji">💪</span> Questions sur le diagramme des livres</h3>
-                    
-                    <p><strong>1. Combien de livres ont été lus en mars ?</strong></p>
-                    <button class="show-answer-btn" onclick="toggleAnswer('answer6')">Voir la réponse</button>
-                    <div id="answer6" class="answer">
-                        <p><span class="emoji">✅</span> <strong>25 livres</strong> ont été lus en mars.</p>
-                    </div>
-                    
-                    <p><strong>2. Quel mois a eu le moins de livres lus ?</strong></p>
-                    <button class="show-answer-btn" onclick="toggleAnswer('answer7')">Voir la réponse</button>
-                    <div id="answer7" class="answer">
-                        <p><span class="emoji">✅</span> <strong>Janvier</strong> a eu le moins de livres lus (15 livres).</p>
-                    </div>
-                    
-                    <p><strong>3. Combien de livres ont été lus en février de plus qu'en janvier ?</strong></p>
-                    <button class="show-answer-btn" onclick="toggleAnswer('answer8')">Voir la réponse</button>
-                    <div id="answer8" class="answer">
-                        <p><span class="emoji">✅</span> 20 - 15 = <strong>5 livres de plus</strong> en février qu'en janvier.</p>
-                    </div>
-                    
-                    <p><strong>4. Combien de livres ont été lus en total pendant ces 4 mois ?</strong></p>
-                    <button class="show-answer-btn" onclick="toggleAnswer('answer9')">Voir la réponse</button>
-                    <div id="answer9" class="answer">
-                        <p><span class="emoji">✅</span> 15 + 20 + 25 + 17 = <strong>77 livres</strong> au total.</p>
-                    </div>
+                <div class="definition-box">
+                    <h3><span class="emoji">🌟</span> Le savais-tu ?</h3>
+                    <p>Les diagrammes à barres sont utilisés partout :</p>
+                    <ul>
+                        <li>Dans les journaux pour comparer des résultats</li>
+                        <li>Dans les entreprises pour analyser les ventes</li>
+                        <li>Dans les écoles pour suivre les progrès des élèves</li>
+                        <li>En météo pour comparer les températures</li>
+                    </ul>
                 </div>
             </section>
 
             <!-- Message pour le maître -->
             <div class="teacher-message">
-                <p><strong>📝 Message pour le maître :</strong> Si les exercices interactifs ne fonctionnent pas, 
-                <a href="https://t-nabil10.github.io/Organisation-et-traitement-des-donn-es/5.html" target="_blank">cliquez ici pour accéder à la version en ligne</a>.</p>
+                <p><strong>📝 Message pour le maître :</strong> Si vous rencontrez des problèmes d'affichage, 
+                <a href="https://t-nabil10.github.io/Organisation-et-traitement-des-donn-es/5.html" target="_blank">cliquez ici pour accéder à la version en ligne complète</a>.</p>
             </div>
         </div>
         
@@ -377,16 +206,5 @@
             <p><span class="emoji">📊</span> Organisation et traitement des données - Niveau CM1 <span class="emoji">📊</span></p>
         </footer>
     </div>
-
-    <script>
-        function toggleAnswer(answerId) {
-            const answer = document.getElementById(answerId);
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-            } else {
-                answer.style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
