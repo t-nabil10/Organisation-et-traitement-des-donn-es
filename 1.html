@@ -3,145 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📊 Organisation des Données - CM1</title>
+    <title>Organisation des Données - CM1</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Comic Neue', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            background: #f5f5f5;
             color: #333;
-            line-height: 1.5;
-            padding: 12px;
             min-height: 100vh;
-            font-size: 14px;
+            padding: 8px;
+            font-size: 13px;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-        }
-        
-        .lesson-card {
-            background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
-            border-radius: 18px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            padding: 25px;
-            margin-bottom: 20px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             overflow: hidden;
-            transition: transform 0.3s ease;
-            border: 2px solid #e0e0e0;
         }
         
-        .lesson-card:hover {
-            transform: translateY(-3px);
-        }
-        
-        .header {
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 12px;
             text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px dashed #3498db;
-            background: linear-gradient(135deg, #3498db, #2ecc71);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
         }
         
         h1 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.4em;
+            margin-bottom: 4px;
         }
         
         .subtitle {
-            font-size: 1rem;
-            color: #7f8c8d;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 15px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
         }
         
         h2 {
-            color: #e74c3c;
-            margin: 20px 0 15px 0;
-            font-size: 1.4rem;
-            padding: 8px 12px;
-            background-color: #ffeaa7;
-            border-radius: 8px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-        
-        h2 i {
-            color: #e74c3c;
         }
         
         h3 {
             color: #2980b9;
-            margin: 16px 0 12px 0;
-            font-size: 1.2rem;
+            margin: 10px 0 6px 0;
+            font-size: 1.1em;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         
         .rule-box {
             background: linear-gradient(to right, #d4edda, #c3e6cb);
-            border-left: 4px solid #28a745;
-            padding: 16px;
-            margin: 16px 0;
-            border-radius: 0 12px 12px 0;
-            box-shadow: 0 3px 5px rgba(0,0,0,0.08);
-            font-size: 0.95rem;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 3px solid #16a085;
+            font-size: 0.95em;
         }
         
         .example-box {
             background: linear-gradient(to right, #e3f2fd, #bbdefb);
-            border: 2px solid #2196f3;
-            border-radius: 12px;
-            padding: 18px;
-            margin: 18px 0;
-            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 12px 0;
+            border: 2px solid #9b59b6;
         }
         
         .data-sample {
             background: linear-gradient(to right, #fff3cd, #ffeaa7);
-            padding: 14px;
-            border-radius: 10px;
-            margin: 14px 0;
+            padding: 12px;
+            border-radius: 5px;
+            margin: 12px 0;
             font-family: 'Courier New', monospace;
             overflow-x: auto;
             white-space: nowrap;
             border: 2px dashed #f39c12;
             font-weight: bold;
             color: #d35400;
-            font-size: 0.9rem;
+            font-size: 0.9em;
         }
         
         .questions {
-            margin: 20px 0;
+            margin: 15px 0;
         }
         
         .question {
-            margin-bottom: 14px;
-            padding: 14px;
+            margin-bottom: 12px;
+            padding: 12px;
             background: linear-gradient(to right, #f8f9fa, #e9ecef);
-            border-radius: 10px;
+            border-radius: 5px;
             counter-increment: question-counter;
-            border-left: 4px solid #9b59b6;
+            border-left: 3px solid #9b59b6;
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            transition: all 0.2s ease;
-        }
-        
-        .question:hover {
-            transform: scale(1.01);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+            gap: 8px;
         }
         
         .question:before {
@@ -149,14 +132,14 @@
             font-weight: bold;
             color: white;
             background: linear-gradient(135deg, #9b59b6, #8e44ad);
-            width: 26px;
-            height: 26px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            font-size: 0.9rem;
+            font-size: 0.85em;
         }
         
         .questions {
@@ -166,39 +149,38 @@
         .question-content {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         
         .answer-btn {
             background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
             border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 6px 12px;
+            border-radius: 15px;
             cursor: pointer;
-            font-size: 0.85rem;
+            font-size: 0.85em;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 6px;
-            margin-top: 8px;
+            gap: 5px;
+            margin-top: 6px;
             align-self: flex-start;
         }
         
         .answer-btn:hover {
             background: linear-gradient(135deg, #2980b9, #2471a3);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transform: translateY(-1px);
         }
         
         .answer {
             background: linear-gradient(to right, #e8f6f3, #d0ece7);
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 8px;
             border-left: 3px solid #1abc9c;
             display: none;
-            font-size: 0.9rem;
+            font-size: 0.9em;
         }
         
         .answer.show {
@@ -211,58 +193,39 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .icon {
-            font-size: 1.3rem;
-            margin-right: 8px;
-        }
-        
         .note {
             background: linear-gradient(to right, #fff3cd, #ffeaa7);
-            padding: 12px;
-            border-radius: 8px;
-            margin: 16px 0;
-            border-left: 4px solid #ffc107;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 12px 0;
+            border-left: 3px solid #ffc107;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.9rem;
+            gap: 8px;
+            font-size: 0.9em;
         }
         
         .note i {
             color: #ff9800;
-            font-size: 1.5rem;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 2px dashed #bdc3c7;
-            color: #7f8c8d;
-            font-size: 0.85rem;
-        }
-        
-        .emoji {
-            font-size: 1.3rem;
-            margin: 0 4px;
+            font-size: 1.2em;
         }
         
         .solution-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 12px 0;
-            font-size: 0.9rem;
+            margin: 10px 0;
+            font-size: 0.9em;
         }
         
         .solution-table th {
             background: linear-gradient(135deg, #3498db, #2980b9);
             color: white;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
         }
         
         .solution-table td {
-            padding: 8px;
+            padding: 6px;
             text-align: center;
             border: 1px solid #ddd;
         }
@@ -271,80 +234,69 @@
             background-color: #f2f2f2;
         }
         
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .lesson-card {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 1.6rem;
-            }
-            
-            h2 {
-                font-size: 1.3rem;
-            }
-            
-            h3 {
-                font-size: 1.1rem;
-            }
+        .emoji {
+            font-size: 1em;
+            margin-right: 4px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 12px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 15px;
+            font-size: 0.85em;
+        }
+        
+        p {
+            margin-bottom: 8px;
+            font-size: 0.95em;
         }
         
         @media (max-width: 480px) {
             body {
-                padding: 10px;
-                font-size: 13px;
-            }
-            
-            .lesson-card {
-                padding: 16px;
+                font-size: 12px;
+                padding: 5px;
             }
             
             h1 {
-                font-size: 1.4rem;
+                font-size: 1.3em;
             }
             
             h2 {
-                font-size: 1.2rem;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
+                font-size: 1.1em;
             }
             
             h3 {
-                font-size: 1.05rem;
+                font-size: 1em;
             }
             
-            .rule-box, .example-box {
-                padding: 14px;
+            .data-sample {
+                font-size: 0.85em;
             }
         }
         
         @media (max-width: 360px) {
-            .lesson-card {
-                padding: 14px;
-            }
-            
-            .data-sample {
+            .question {
                 padding: 10px;
-                font-size: 0.85rem;
             }
             
-            h2, h3 {
-                padding: 6px 10px;
+            .answer-btn {
+                padding: 5px 10px;
+                font-size: 0.8em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="lesson-card">
-            <div class="header">
-                <h1>📊 Organisation et traitement des données</h1>
-                <p class="subtitle">Leçon de mathématiques pour le CM1</p>
-            </div>
-            
-            <section>
+        <header>
+            <h1><span class="emoji">📊</span> Organisation et Traitement des Données</h1>
+            <div class="subtitle">Niveau CM1 - Tableaux et Diagrammes</div>
+        </header>
+        
+        <div class="content">
+            <section class="section">
                 <h2><i class="fas fa-table"></i> Tableaux</h2>
                 
                 <div class="rule-box">
@@ -432,11 +384,11 @@
                     </div>
                 </div>
             </section>
-            
-            <div class="footer">
-                <p><i class="fas fa-graduation-cap"></i> Leçon de mathématiques CM1 - Bon courage ! <span class="emoji">✨</span></p>
-            </div>
         </div>
+        
+        <footer>
+            <p><span class="emoji">📊</span> Organisation et traitement des données - Niveau CM1 <span class="emoji">📊</span></p>
+        </footer>
     </div>
 
     <script>
